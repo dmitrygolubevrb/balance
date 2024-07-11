@@ -16,3 +16,4 @@
 6. php artisan queue:work --queue=transactions
 7. php artisan make:user   - добавление нового пользователя
 8. php artisan make:transaction   - проведение операции
+Для удобства pgAdmin крутится на localhost с портом 8081
