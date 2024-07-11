@@ -20,7 +20,8 @@ class BalanceTransactionResource extends JsonResource
             'type' => $this->type,
             'amount' => $this->amount,
             'balance_after' => $this->balance_after,
-            'description' => $this->description
+            'description' => $this->description,
+            'created_date' => $this->created_date
         ];
     }
 }

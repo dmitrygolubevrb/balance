@@ -4,6 +4,7 @@
             <q-table
                 flat bordered
                 grid
+                grid-header
                 title="Все Транзакции"
                 :rows="balanceTransactions"
                 :columns="columns"
@@ -32,6 +33,8 @@ const balanceTransactionStore = useBalanceTransactionStore()
 
 const balanceTransactions = computed(() => balanceTransactionStore.balanceTransactions)
 
+onMounted(() => balanceTransactionStore.getBalanceTransactions())
+
 const filter = ref('')
 const columns = [
     {
@@ -42,9 +45,10 @@ const columns = [
         format: val => `${val}`,
         sortable: true
     },
-    { name: 'amount', align: 'center', label: 'Количество средств', field: 'amount', sortable: true },
-    { name: 'balance_after', label: 'Баланс после операции', field: 'balance_after', sortable: true },
-    { name: 'type', label: 'Тип транзакции', field: 'type' }
+    { name: 'amount', align: 'center', label: 'Количество средств', field: 'amount'},
+    { name: 'balance_after', label: 'Баланс после операции', field: 'balance_after' },
+    { name: 'type', label: 'Тип транзакции', field: 'type' },
+    { name: 'created_date', label: 'Дата операции', field: 'created_date', sortable: true },
 ]
 
 </script>

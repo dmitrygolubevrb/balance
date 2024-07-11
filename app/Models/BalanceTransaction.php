@@ -29,8 +29,8 @@ class BalanceTransaction extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function getCreateDateAttribute(): string
+    public function getCreatedDateAttribute(): string
     {
-        return Carbon::parse($this->created_at)->toDateString();
+        return Carbon::parse($this->created_at)->toDateTimeString();
     }
 }
