@@ -8,11 +8,11 @@
 </p>
 
 
-1. docker-compose up -d  (Redis и PostgreSQL разворачиваются в Docker)
+1. docker-compose up -d  (Redis и PostgreSQL разворачиваются в Docker, env файл в репозитории (стандартные порты изменены, для избежания конфликтов с локальными службами))
 2. npm i
 3. composer i
-4. npm run build
+4. npm run build | dev
 5. php artisan serve
-6. php artisan queueLwork --queue=transactions
+6. php artisan queue:work --queue=transactions
 7. php artisan make:user   - добавление нового пользователя
 8. php artisan make:transaction   - проведение операции
