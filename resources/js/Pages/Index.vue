@@ -44,8 +44,10 @@ const balanceTransactions = computed(
         .sort((a, b) => a.id > b.id ? 1 : -1).slice(0, 5)
 )
 
-onMounted(() => balanceTransactionStore.getBalanceTransactions())
-onMounted(() => balanceStore.getBalance())
+onMounted(() => {
+    balanceTransactionStore.getBalanceTransactions()
+    balanceStore.getBalance()
+})
 
 const interval = setInterval(() => balanceStore.getBalance(), 10000)
 
