@@ -84,7 +84,7 @@ class CreateBalanceTransaction extends Command
             BalanceTransactionJob::dispatch(
                 balanceTransactionService: $balanceTransactionService,
                 balanceTransactionDTO: $createBalanceTransactionDTO
-            )->onQueue('transactions')->beforeCommit();
+            )->onQueue('transactions');
             $this->info("Транзакция {$transactionType} для пользователя {$login} успешно отправлена на обработку");
         } catch (\Exception $exception) {
             $this->error($exception->getMessage());
